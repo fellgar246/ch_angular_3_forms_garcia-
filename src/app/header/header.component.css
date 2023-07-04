@@ -1,0 +1,14 @@
+
+.text-small {
+  font-size: 85%;
+}
+
+#logo{
+  width:150px;
+  height:100px;
+  background-image: url('https://res.cloudinary.com/dvvqbwhcc/image/upload/v1687113758/ANGULAR_PROJECT/Black_Modern_Studio_Logo_opnj7n.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+

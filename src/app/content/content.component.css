@@ -1,0 +1,32 @@
+#contentContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#itemsContainer{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#textContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+#text{
+  width: 400px;
+}
+
+#image{
+  width:400px;
+  height:400px;
+  background-image: url('https://res.cloudinary.com/dvvqbwhcc/image/upload/v1687114781/ANGULAR_PROJECT/register_studio_b4cbpp.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
