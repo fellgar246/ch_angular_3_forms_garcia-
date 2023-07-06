@@ -6,8 +6,12 @@
         formControlName="name"
         type="text"
         class="form-control"
+        [class.is-invalid]="nameControl.touched && nameControl.invalid"
         id="inputEmail4"
       />
+      <div class="invalid-feedback">
+        El campo es requerido
+      </div>
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Apellido</label>
@@ -15,8 +19,12 @@
         formControlName="lastName"
         type="text"
         class="form-control"
+        [class.is-invalid]="lastNameControl.touched && lastNameControl.invalid"
         id="inputEmail4"
       />
+      <div class="invalid-feedback">
+        El campo es requerido
+      </div>
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
@@ -24,12 +32,28 @@
         formControlName="email"
         type="email"
         class="form-control"
+        [class.is-invalid]="emailControl.touched && emailControl.invalid"
         id="inputEmail4"
       />
+      <div class="invalid-feedback">
+        <span *ngIf="registerModel.controls.email.errors?.['required']">El campo es requerido</span>
+        <span *ngIf="registerModel.controls.email.errors?.['email']">Email no válido</span>
+      </div>
     </div>
     <div>
       <label for="inputPassword4" class="form-label">Password</label>
-      <input [formControl]="passwordControl" type="password" class="form-control" id="inputPassword4" />
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        [class.is-invalid]="passwordControl.touched && passwordControl.invalid"
+        id="inputPassword4"
+      />
+      <p>{{ registerModel.controls.password.errors | json }}</p>
+      <div class="invalid-feedback">
+        <span *ngIf="registerModel.controls.password.errors?.['required']">El campo es requerido</span>
+        <span *ngIf="registerModel.controls.password.errors?.['minlength']">Debe tener al menos 6 digitos</span>
+      </div>
     </div>
 
 

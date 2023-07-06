@@ -17,10 +17,10 @@ export class RegisterFormComponent {
 
   mostrarAlert: boolean = false;
 
-  nameControl = new FormControl('');
-  lastNameControl = new FormControl('');
-  emailControl = new FormControl('', [Validators.required]);
-  passwordControl = new FormControl('');
+  nameControl = new FormControl('',[Validators.required]);
+  lastNameControl = new FormControl('',[Validators.required]);
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
+  passwordControl = new FormControl('',[Validators.required, Validators.minLength(6)]);
 
   registerModel: FormGroup<RegisterModel> = new FormGroup({
     name: this.nameControl,
@@ -29,21 +29,14 @@ export class RegisterFormComponent {
     password: this.passwordControl
   });
 
-
-
   submitRegistro() {
     if (this.registerModel.valid) {
-      // Realizar acciones de registro aquí
       this.mostrarAlert = true;
-
       setTimeout(() => {
         this.mostrarAlert = false;
       }, 2000);
-
       console.log('Registro exitoso');
       console.log(this.registerModel.value);
-
-
     }
   }
 
