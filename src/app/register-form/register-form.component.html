@@ -1,1 +1,42 @@
-<p>register-form works!</p>
+<div>
+  <form [formGroup]="registerModel" (ngSubmit)="submitRegistro()" class="row col-8 g-3">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Nombre</label>
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="inputEmail4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Apellido</label>
+      <input
+        formControlName="lastName"
+        type="text"
+        class="form-control"
+        id="inputEmail4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="inputEmail4"
+      />
+    </div>
+    <div>
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input [formControl]="passwordControl" type="password" class="form-control" id="inputPassword4" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="registerModel.invalid">Registrarse</button>
+    <div *ngIf="mostrarAlert" class="alert alert-success" role="alert">
+      Registro exitoso. ¡Bienvenido!
+    </div>
+  </form>
+</div>
+
