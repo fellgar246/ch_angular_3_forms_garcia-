@@ -1,4 +1,4 @@
-<div>
+<div id="container">
   <form [formGroup]="registerModel" (ngSubmit)="submitRegistro()" class="row col-8 g-3">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre</label>
@@ -49,14 +49,11 @@
         [class.is-invalid]="passwordControl.touched && passwordControl.invalid"
         id="inputPassword4"
       />
-      <p>{{ registerModel.controls.password.errors | json }}</p>
       <div class="invalid-feedback">
         <span *ngIf="registerModel.controls.password.errors?.['required']">El campo es requerido</span>
         <span *ngIf="registerModel.controls.password.errors?.['minlength']">Debe tener al menos 6 digitos</span>
       </div>
     </div>
-
-
     <button type="submit" class="btn btn-primary" [disabled]="registerModel.invalid">Registrarse</button>
     <div *ngIf="mostrarAlert" class="alert alert-success" role="alert">
       Registro exitoso. ¡Bienvenido!
