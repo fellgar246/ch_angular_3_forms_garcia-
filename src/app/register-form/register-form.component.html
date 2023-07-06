@@ -1,4 +1,8 @@
 <div id="container">
+  <div id="titleContainer">
+    <h1>Bienvenido</h1>
+    <h3>Por favor, ingresa tus datos para registrarte</h3>
+  </div>
   <form [formGroup]="registerModel" (ngSubmit)="submitRegistro()" class="row col-8 g-3">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre</label>
@@ -54,7 +58,7 @@
         <span *ngIf="registerModel.controls.password.errors?.['minlength']">Debe tener al menos 6 digitos</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="registerModel.invalid">Registrarse</button>
+    <button type="submit" class="btn btn-primary" [disabled]="registerModel.invalid">Registrarme</button>
     <div *ngIf="mostrarAlert" class="alert alert-success" role="alert">
       Registro exitoso. ¡Bienvenido!
     </div>
