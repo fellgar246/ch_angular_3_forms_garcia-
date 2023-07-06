@@ -32,6 +32,7 @@ export class RegisterFormComponent {
   submitRegistro() {
     if (this.registerModel.valid) {
       this.mostrarAlert = true;
+      this.registerModel.reset();
       setTimeout(() => {
         this.mostrarAlert = false;
       }, 2000);
